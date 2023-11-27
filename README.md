@@ -11,7 +11,7 @@ This is my entry for the Demcon fibonacci challenge.
 6. The results will be printed to the console.
 
 ## Implementation
-I have implemented three different methods to calculate the final result.\
+I have implemented three different methods to calculate the final result.
 
 ### Simple
 ```csharp
