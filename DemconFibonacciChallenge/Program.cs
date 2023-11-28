@@ -13,7 +13,7 @@ else
     var valueWithSkips = runner.WithSkips();
     var valueWithSkipsOptimized = runner.WithSkipsOptimized();
 
-    Console.WriteLine($"{"Simple",-20}{valueSimple,10}");
-    Console.WriteLine($"{"WithSkips",-20}{valueWithSkips,10}");
-    Console.WriteLine($"{"WithSkipsOptimized",-20}{valueWithSkipsOptimized,10}");
+    Console.WriteLine($"{"Simple",-20}{valueSimple}");
+    Console.WriteLine($"{"WithSkips",-20}{valueWithSkips}");
+    Console.WriteLine($"{"WithSkipsOptimized",-20}{valueWithSkipsOptimized}");
 }
