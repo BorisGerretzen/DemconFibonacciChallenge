@@ -5,10 +5,11 @@ This is my entry for the Demcon fibonacci challenge.
 1. Make sure you have the .NET 8.0 SDK installed.
 2. Clone the repository.
 3. Open a terminal and navigate to the root of the repository, so the folder containing the `DemconFibonacciChallenge.sln` file.
-4. Run the following command:\
+4. Run the following command to view the calculated results:\
 ```dotnet run -c Release --project .\DemconFibonacciChallenge\DemconFibonacciChallenge.csproj```
-5. Do not touch your computer for a while, it runs the various implementations many times to get a good average.
-6. The results will be printed to the console.
+5. Run the following command to compare the performance of different implementations:\
+```dotnet run -c Release --project .\DemconFibonacciChallenge\DemconFibonacciChallenge.csproj -- benchmark```
+   - Do not touch your computer for a while (2-3 min), it runs the various implementations many times to get a good average.
 
 ## Implementation
 I have implemented three different methods to calculate the final result.
