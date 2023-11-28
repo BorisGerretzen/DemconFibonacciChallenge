@@ -9,8 +9,7 @@ public class FibonacciBenchmark
 
     /// <summary>
     ///     A naive implementation.
-    ///     We generate all Fibonacci numbers up to MaxValue, we check for each number if it's even, and if so add it to the
-    ///     sum.
+    ///     We generate all Fibonacci numbers up to MaxValue, we check for each number if it's even, and if so add it to the sum.
     /// </summary>
     [Benchmark]
     public int Simple()
@@ -61,8 +60,7 @@ public class FibonacciBenchmark
     }
 
     /// <summary>
-    ///     The same idea as in <see cref="WithSkips" />, but skips the intermediate variables and reduces the number of
-    ///     calculations.
+    ///     The same idea as in <see cref="WithSkips" />, but skips the intermediate variables and reduces the number of calculations.
     /// </summary>
     [Benchmark]
     public int WithSkipsOptimized()
