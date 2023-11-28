@@ -16,46 +16,49 @@ I have implemented three different methods to calculate the final result.
 
 ### Simple
 ```csharp
-var a = 1;
-var b = 2;
-var sum = 0;
+ public int Simple()
+ {
+     var a = 1;
+     var b = 2;
+     var sum = 0;
 
-while (b <= MaxValue)
-{
-    if (b % 2 == 0)
-    {
-        sum += b;
-    }
-    
-    var next = a + b;
-    a = b;
-    b = next;
-}
+     while (b <= MaxValue)
+     {
+         if (b % 2 == 0) sum += b;
 
-return sum;
+         var next = a + b;
+         a = b;
+         b = next;
+     }
+
+     return sum;
+ }
 ```
 This is the most straightforward implementation, it just calculates the regular fibonacci sequence and for each number checks if it is even.
 If the number is even it is added to the sum.
 
 ### WithSkips
 ```csharp
-var a = 1;
-var b = 2;
-var sum = 0;
+ public int WithSkips()
+ {
+     var a = 1;
+     var b = 2;
+     var sum = 0;
 
-while (b <= MaxValue)
-{
-    sum += b;
-    
-    var skip1 = a + b;
-    var skip2 = skip1 + b;
-    var next = skip1 + skip2;
-    
-    a = skip2;
-    b = next;
-}
+     while (b <= MaxValue)
+     {
+         sum += b;
 
-return sum;
+         var skip1 = a + b;
+         var skip2 = skip1 + b;
+         var next = skip1 + skip2;
+
+         a = skip2;
+         b = next;
+     }
+
+     return sum;
+ }
 ```
 This is a slightly smarter approach because it uses a pattern in the fibonacci sequence to skip numbers.
 The pattern is that every third number is even, so instead of checking every number we can just add every third number to the sum.
@@ -63,20 +66,23 @@ This means we don't have to check if a number is even anymore, which saves us a 
 
 ### WithSkipsOptimized
 ```csharp
-var a = 1;
-var b = 2;
-var sum = 0;
+ public int WithSkipsOptimized()
+ {
+     var a = 1;
+     var b = 2;
+     var sum = 0;
 
-while (b <= MaxValue)
-{
-    sum += b;
-    (a, b) = (
-        a + 2*b, 
-        2*a + 3*b
-    );
-}
+     while (b <= MaxValue)
+     {
+         sum += b;
+         (a, b) = (
+             a + 2 * b,
+             2 * a + 3 * b
+         );
+     }
 
-return sum;
+     return sum;
+ }
 ```
 This is the same as `WithSkips`, but it is optimized to use less intermediate variables and calculations.
 
