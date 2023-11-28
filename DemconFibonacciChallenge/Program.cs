@@ -1,7 +1,7 @@
 ﻿using BenchmarkDotNet.Running;
 using DemconFibonacciChallenge;
 
-if (args.Length > 0 && args[0] == "benchmark")
+if (args.FirstOrDefault() == "benchmark")
 {
     _ = BenchmarkRunner.Run<FibonacciBenchmark>();
 }
